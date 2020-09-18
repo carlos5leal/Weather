@@ -6,6 +6,7 @@ $(function(){
     var accuweatherAPIKey = "2wmWk7ABtSvJZWrxwEIaGCBGwya9lypX";
     var mapboxToken ="pk.eyJ1IjoiY2FybG9zbGVhbCIsImEiOiJja2V4ODJ5MGM0YjdkMnhwaTYxMXV6Yzl3In0.yqjRuixeikuI-AquzKi13A";
 	var unsplashKey = "F67DqbBwqTH9TuSBxMsYtz3kMjJkR8gsrruPTPdqtTI";
+	var ipgeolocationkey = "77dbe351c5c342fe877db22c53307081";
 
    // ************************************************************************************************
 
@@ -375,13 +376,14 @@ $(function(){
             var long_padrao = -8.497839;
 
         $.ajax({
-            url : "https://www.geoplugin.net/json.gp",
+            //url : "https://www.geoplugin.net/json.gp",
+			url : "https://ipgeolocation.abstractapi.com/v1/?api_key=" + ipgeolocationkey,
             type: "GET",
             dataType: "json",
             success: function(data){
-                
-                if (data.geoplugin_latitude && data.geoplugin_longitude) {
-                    pegarLocalUsuario(data.geoplugin_latitude,data.geoplugin_longitude);
+                //console.log("coordenadas: ", data);
+                if (data.latitude && data.longitude) {
+                    pegarLocalUsuario(data.latitude,data.longitude);
                 } else {
                     pegarLocalUsuario(lat_padrao,long_padrao);
                 }
