@@ -139,7 +139,7 @@ $(function(){
     function pegarPrevisãoHoraAHora(localCode) {
         
         $.ajax({
-            url : "http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/" + localCode + "?apikey=" + accuweatherAPIKey +"&language=en-us&metric=true",
+            url : "https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/" + localCode + "?apikey=" + accuweatherAPIKey +"&language=en-us&metric=true",
             type: "GET",
             dataType: "json",
             success: function(data){
@@ -173,7 +173,7 @@ $(function(){
 	function pegarUltimashoras(localCode) {
         
         $.ajax({
-            url : "http://dataservice.accuweather.com/currentconditions/v1/" + localCode + "/historical/24?apikey=" + accuweatherAPIKey +"&language=en-us&metric=true",			
+            url : "https://dataservice.accuweather.com/currentconditions/v1/" + localCode + "/historical/24?apikey=" + accuweatherAPIKey +"&language=en-us&metric=true",			
             type: "GET",
             dataType: "json",
             success: function(data){
@@ -241,7 +241,7 @@ $(function(){
     function pegarPrevisao5Dias(localCode) {
     
         $.ajax({
-            url : "http://dataservice.accuweather.com/forecasts/v1/daily/5day/" + localCode + "?apikey=" + accuweatherAPIKey + "&language=en-us&metric=true",
+            url : "https://dataservice.accuweather.com/forecasts/v1/daily/5day/" + localCode + "?apikey=" + accuweatherAPIKey + "&language=en-us&metric=true",
             type: "GET",
             dataType: "json",
             success: function(data){
@@ -283,7 +283,7 @@ $(function(){
     function pegarTempoAtual(localCode) {
         
         $.ajax({
-            url : "http://dataservice.accuweather.com/currentconditions/v1/" + localCode + "?apikey=" + accuweatherAPIKey + "&language=en-us",
+            url : "https://dataservice.accuweather.com/currentconditions/v1/" + localCode + "?apikey=" + accuweatherAPIKey + "&language=en-us",
             type: "GET",
             dataType: "json",
             success: function(data){
@@ -309,7 +309,7 @@ $(function(){
 
     function pegarLocalUsuario(lat, long) {
         $.ajax({
-            url : "http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=" + accuweatherAPIKey + "&q=" + lat + "%2C" + long +"&language=en-us",
+            url : "https://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=" + accuweatherAPIKey + "&q=" + lat + "%2C" + long +"&language=en-us",
             type: "GET",
             dataType: "json",
             success: function(data){
@@ -375,7 +375,7 @@ $(function(){
             var long_padrao = -8.497839;
 
         $.ajax({
-            url : "http://www.geoplugin.net/json.gp",
+            url : "https://www.geoplugin.net/json.gp",
             type: "GET",
             dataType: "json",
             success: function(data){
